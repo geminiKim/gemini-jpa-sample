@@ -17,13 +17,4 @@ public class UserTest {
         assertThat(user.getName(), is("gemini"));
         assertThat(user.getPhone(), is("01011223344"));
     }
-
-    @Test
-    public void testUpdateCartInfo() {
-        User user = new UserBuilder().build();
-
-        user.updateCartInfo(2, 10000);
-        assertThat(user.getTotalCartQuantity(), is(2));
-        assertThat(user.getTotalCartPrice(), is(10000));
-    }
 }

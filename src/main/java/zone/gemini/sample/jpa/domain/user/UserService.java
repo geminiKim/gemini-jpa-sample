@@ -2,21 +2,22 @@ package zone.gemini.sample.jpa.domain.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import zone.gemini.sample.jpa.domain.cart.Cart;
 
 @Component
-public class UserInfoUpdater {
+public class UserService {
     private UserRepository userRepository;
 
     @Autowired
-    public UserInfoUpdater(UserRepository userRepository) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public void updateCartInfo(final long userId, final Cart cart) {
+    @Transactional
+    public void addCart(final long userId, final Cart cart) {
         User user = userRepository.findOne(userId);
-        user.updateCartInfo(cart.getItemQuantity(), cart.getPrice());
-        cart.setUser(user);
+        user.addCart(cart);
     }
 }
 
