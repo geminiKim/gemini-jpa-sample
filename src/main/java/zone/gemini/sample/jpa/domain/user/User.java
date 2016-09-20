@@ -21,10 +21,10 @@ public class User extends BaseEntity {
     private String phone;
 
     @Column
-    private int totalCartQuantity = 0;
+    private int totalCartQuantity  = 0;
 
     @Column
-    private int totalCartPrice = 0;
+    private int totalCartPrice  = 0;
 
     @OneToMany(mappedBy = "user")
     private List<Cart> carts;
