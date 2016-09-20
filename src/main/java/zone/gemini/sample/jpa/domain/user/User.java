@@ -39,4 +39,3 @@ public class User extends BaseEntity {
         this.totalCartPrice += price;
     }
 }
-
