@@ -23,6 +23,6 @@ public class Cart extends BaseEntity {
     @Column(nullable = false)
     private int price;
 
-    @ManyToOne(fetch  = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 }
