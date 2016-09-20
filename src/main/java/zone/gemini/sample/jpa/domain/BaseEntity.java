@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected long id;
+    protected Long id;
 
     @Column(updatable = false)
     protected LocalDateTime createdAt;
@@ -26,5 +26,9 @@ public class BaseEntity {
     @PreUpdate
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
