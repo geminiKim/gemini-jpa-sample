@@ -5,7 +5,10 @@ import lombok.Setter;
 import zone.gemini.sample.jpa.domain.BaseEntity;
 import zone.gemini.sample.jpa.domain.user.User;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 @Setter
 @Getter
@@ -21,6 +24,5 @@ public class Cart extends BaseEntity {
     private int price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn
     private User user;
 }
